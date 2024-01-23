@@ -1,0 +1,18 @@
+@mixin center() {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin bcg-img($url, $height) {
+  background-image: url ($url);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin title-border($direction, $color) {
+  display: flex;
+  text-align: $direction;
+  width: 700px;
+  height: 70px;
+  border-bottom: 1px solid $color;
+}
