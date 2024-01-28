@@ -1,243 +1,409 @@
-@import "variables.scss";
-@import "mixins.scss";
-@import "mainFonts.scss";
-.header {
-  position: fixed;
-  width: 100%;
-  @include center;
-  height: $headerheight;
-  color: $color-1;
-  background-color: #ffffff;
-  z-index: 10;
-  &__menu {
-    display: flex;
-    gap: 20px;
-    height: 100%;
-    &__options {
-      @include center;
-      width: 100px;
-      height: 100%;
-      &:hover {
-        transition: 0.2s;
-        background-color: rgba(255, 166, 0, 0.208);
-        border-radius: 40px;
-      }
-    }
-  }
-  &__connect {
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'mainFonts.scss';
+
+.button {
+    @include center;
     max-width: 180px;
     width: 100%;
-  }
+    height: 50px;
+    padding: 10px;
+    color: $color-5;
+    background-color: $color-2;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px 0px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+    &__dis{
+        &:hover {
+            background-color: #fff;
+            color: $color-1;
+            border: solid 1px $color-1;
+        }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
 }
-.button {
-  @include center;
-  max-width: 180px;
-  width: 100%;
-  height: 50px;
-  padding: 10px;
-  color: $color-5;
-  background-color: $color-2;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px 0px;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: 0.2s;
-  &:hover {
-    background-color: #fff;
-    color: $color-1;
-    border: solid 1px $color-1;
-  }
-  &:active {
-    transform: scale(0.95);
-  }
+.close__btn {
+    font-size: 10px;
+    height: 30px;
+    width: 30px;
 }
-
 .section {
-  display: flex;
-  width: 100%;
+    display: flex;
+    width: 100%;
 }
 .text {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 500px;
 }
-.connect {
-  display: flex;
-  align-items: center;
-  width: 300px;
-  margin: 80px 80px 20px;
-  gap: 150px;
 
-  &__button {
-    align-self: center;
-  }
-}
 .top-text {
-  display: flex;
-  align-self: center;
-  width: 70px;
-  border-bottom: 0.5px dashed;
+    display: flex;
+    align-self: center;
+    width: 70px;
+    border-bottom: 0.5px dashed;
 }
-.main {
-  color: $color-5;
-  background-color: #000000;
-  background-image: url(../images/main.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.running__line {
-  @include center;
-  height: 40px;
-  background-color: $color-2;
-  overflow: hidden;
-  & div {
-    @include center;
-    gap: 60px;
-    white-space: nowrap;
-    width: 200%;
-    color: $color-5;
-    font-size: 20px;
-    animation: text 15s linear infinite;
-    @keyframes text {
-      0% {
-        transform: translateX(100%);
-      }
 
-      100% {
-        transform: translateX(-100%);
-      }
+.modal {
+    @include modal;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    &__title {
+        color: $color-1;
+        @include title-border(center, $color-1);
+        width: 320px;
     }
-  }
+    &__content {
+        @include center;
+        flex-direction: column;
+        gap: 40px;
+    }
+    &__socials {
+        @include center;
+        flex-direction: column;
+        gap: 10px;
+        & form {
+            width: 180px;
+        }
+    }
+
+}
+.popup {
+    @include modal;
+    width: 400px;
+    height: 200px;
+    &__content {
+        @include center;
+        gap: 10px;
+        padding: 20px;
+        flex-direction: column;
+    }
+    &__socials {
+        display: flex;
+        gap: 30px;
+        & div {
+            width: 150px;
+        }
+    }
+}
+.blur {
+    filter: blur(5px);
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    @include center;
+    height: $headerheight;
+    color: $color-1;
+    background-color: #ffffff;
+    z-index: 10;
+    &__menu {
+        display: flex;
+        gap: 20px;
+        height: 100%;
+        &__options {
+            @include center;
+            width: 100px;
+            height: 100%;
+            &:hover {
+                transition: 0.2s;
+                background-color: rgba(255, 166, 0, 0.208);
+                border-radius: 40px;
+            }
+        }
+    }
+    &__connect {
+        max-width: 180px;
+        width: 100%;
+    }
+}
+
+.connect {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    margin: 80px 80px 20px;
+    gap: 150px;
+
+    &__button {
+        align-self: center;
+    }
+}
+
+.main {
+    color: $color-5;
+    background-color: #000000;
+    background-image: url(../images/main.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.marquee {
+    @include center;
+    height: 40px;
+    background-color: $color-2;
+    & div {
+        @include center;
+        gap: 60px;
+        color: $color-5;
+        font-size: 20px;
+    }
 }
 
 .info {
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
-  color: $color-1;
-  position: relative;
-  height: $sectionheight;
-  &__img {
-    height: 350px;
-    width: 300px;
-    object-fit: cover;
-    border-radius: 150px 150px 30px 30px;
-  }
-  &__text {
-    text-align: center;
-    justify-content: center;
-  }
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    color: $color-1;
+    position: relative;
+    height: $sectionheight;
+    &__img {
+        height: 350px;
+        width: 300px;
+        object-fit: cover;
+        border-radius: 150px 150px 30px 30px;
+    }
+    &__text {
+        text-align: center;
+        justify-content: center;
+    }
 }
 
 .courses {
-  @include center;
-  padding: 0 30px 30px 30px;
-  background-color: white;
-  color: $color-1;
-  flex-direction: column;
-  gap: 50px;
-  &__title {
-  @include title-border(center, $color-1)
-  }
-  &__img {
-    height: 400px;
-    width: 300px;
-    object-fit: cover;
-  }
-  &__gallery {
     @include center;
-    gap: 150px;
-  }
-}
-.motivation {
-  display: flex;
-  @include center;
-  position: relative;
-  & video {
-    object-fit: cover;
-    width: 100%;
-    height: 500px;
-  }
-  &__text {
-    text-align: center;
-    justify-content: center;
-    width: 500px;
-    position: absolute;
-    z-index: 1;
-    color: $color-5;
-    text-shadow: -3px 1px 10px #000000;
-  }
-}
-.students {
-  @include center;
-  flex-direction: column;
-  height: 800px;
-  background-color: $color-2;
-  color: $color-5;
-  &__title {
-    align-self: flex-end;
-    @include title-border(center, $color-5);
-  }
-  &__gallery {
-    display: flex;
+    padding: 0 30px 30px 30px;
+    background-color: white;
+    color: $color-1;
+    flex-direction: column;
     gap: 50px;
+    &__title {
+        @include title-border(center, $color-1);
+    }
     &__img {
-      width: 200px;
-      height: auto;
+        height: 400px;
+        width: auto;
+        object-fit: cover;
+    }
+}
+.carousel {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    gap: 60px;
+    &__button__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__gallery {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 400px;
+    }
+    &__item {
+        @include center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: opacity 0.5s ease-in-out;
+        display: none;
+        &.faded {
+            display: flex;
+            animation: fadeout 0.4s ease 0s 1 normal forwards;
+            @keyframes fadeout {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+        &.active {
+            display: flex;
+            animation: fade 0.8s ease 0s 1 normal forwards;
+            @keyframes fade {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $color-3;
+        border: none;
+        margin: 0 5px;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.2s ease-in-out;
+        &.active {
+            opacity: 1;
+            background-color: #000000;
+        }
+    }
+}
+.carousel-prev,
+.carousel-next {
+    top: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.motivation {
+    display: flex;
+    @include center;
+    position: relative;
+    & video {
+        object-fit: cover;
+        width: 100%;
+        height: 500px;
     }
     &__text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+        text-align: center;
+        justify-content: center;
+        width: 500px;
+        position: absolute;
+        z-index: 1;
+        color: $color-5;
+        text-shadow: -3px 1px 10px #000000;
     }
-  }
-  & .gallery__title {
-    align-self: flex-start;
-    @include title-border(center, $color-5);
-  }
+}
+.students {
+    @include center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    background-color: $color-2;
+    color: $color-5;
+    &__title {
+        align-self: flex-end;
+        @include title-border(center, $color-5);
+    }
+    &__carousel {
+        gap: 30px;
+        padding: 10px;
+        background-color: #ffffff43;
+        border-radius: 50px;
+    }
+
+    &__container {
+        height: 200px;
+        display: flex;
+        overflow-x: scroll;
+        overscroll-behavior: contain;
+        scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+        gap: 50px;
+        width: 100%;
+        height: 100%;
+        &::-webkit-scrollbar {
+            display: none;
+          }
+    }
+
+    &__gallery {
+        display: flex;
+        height: 180px;
+        width: 550px;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+
+        &__img {
+            width: 150px;
+            height: auto;
+        }
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            & .h6 {
+                width: 400px;
+            }
+        }
+    }
+    & .gallery__title {
+        align-self: flex-start;
+        @include title-border(center, $color-5);
+    }
 }
 
 .join {
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: $color-2;
-  height: 300px;
-  &__img {
-    display: flex;
-    height: 80px;
-    width: 80px;
-    top: -50px;
-    right: 0;
-  }
+    @include center;
+    flex-direction: column;
+    color: $color-5;
+    height: 300px;
+    background-image: url(../images/join.jpg);
+    background-size: cover;
+    & div {
+        @include box;
+        padding: 10px 30px;
+        background-color: $color-1;
+    }
 }
 
 .footer {
-  display: flex;
-  justify-content: space-around;
-  background-color: $color-1;
-  color: $color-4;
-  & a {
-    color: rgb(113, 218, 232);
-  }
-  &__contacts {
     display: flex;
-    flex-direction: column;
-    margin: 20px 0;
-    gap: 30px;
-    &__info {
-      display: flex;
-      flex-direction: column;
-      width: 260px;
-      gap: 15px;
+    justify-content: space-around;
+    background-color: $color-1;
+    color: $color-4;
+    & a {
+        color: rgb(113, 218, 232);
     }
-  }
-  &__map {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 0;
-    gap: 30px;
-  }
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        padding: 30px;
+        gap: 30px;
+        border: 1px solid $color-4;
+        border-radius: 20%;
+        &__title {
+            border-bottom: 1px solid $color-4;
+        }
+        &__info {
+            display: flex;
+            flex-direction: column;
+            width: 260px;
+            gap: 15px;
+        }
+    }
+    &__map {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        gap: 30px;
+        &__title {
+            border-bottom: 1px solid $color-4;
+        }
+    }
+    &__main__map {
+        border: 5px solid $color-4;
+    }
 }

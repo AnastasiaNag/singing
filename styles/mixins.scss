@@ -1,18 +1,41 @@
 @mixin center() {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 @mixin bcg-img($url, $height) {
-  background-image: url ($url);
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url ($url);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @mixin title-border($direction, $color) {
-  display: flex;
-  text-align: $direction;
-  width: 700px;
-  height: 70px;
-  border-bottom: 1px solid $color;
+    display: flex;
+    text-align: $direction;
+    width: 700px;
+    height: 70px;
+    border-bottom: 1px solid $color;
+}
+@mixin box() {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px 0px;
+    border-radius: 50px;
+}
+
+@mixin modal() {
+    @include box;
+    justify-content: center;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+    z-index: 100;
+    &__close {
+        display: flex;
+        align-self: flex-end;
+        height: 30px;
+    }
 }
