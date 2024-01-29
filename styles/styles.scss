@@ -13,15 +13,16 @@
     border: none;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px 0px;
     border-radius: 50px;
-    cursor: pointer;
     transition: 0.2s;
-    &__dis{
+    &__dis {
         &:hover {
+            cursor: pointer;
             background-color: #fff;
             color: $color-1;
             border: solid 1px $color-1;
         }
         &:active {
+            cursor: pointer;
             transform: scale(0.95);
         }
     }
@@ -73,7 +74,6 @@
             width: 180px;
         }
     }
-
 }
 .popup {
     @include modal;
@@ -315,15 +315,15 @@
         overflow-x: scroll;
         overscroll-behavior: contain;
         scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
         gap: 50px;
         width: 100%;
         height: 100%;
         &::-webkit-scrollbar {
             display: none;
-          }
+        }
     }
 
     &__gallery {

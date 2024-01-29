@@ -67,15 +67,16 @@ a {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px 0px;
   border-radius: 50px;
-  cursor: pointer;
   transition: 0.2s;
 }
 .button__dis:hover {
+  cursor: pointer;
   background-color: #fff;
   color: #432818;
   border: solid 1px #432818;
 }
 .button__dis:active {
+  cursor: pointer;
   transform: scale(0.95);
 }
 
