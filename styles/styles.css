@@ -89,6 +89,7 @@ a {
 .section {
   display: flex;
   width: 100%;
+  gap: 20px;
 }
 
 .text {
@@ -132,7 +133,7 @@ a {
   color: #432818;
   display: flex;
   text-align: center;
-  width: 700px;
+  max-width: 700px;
   height: 70px;
   border-bottom: 1px solid #432818;
   width: 320px;
@@ -224,10 +225,6 @@ a {
   background-color: rgba(255, 166, 0, 0.208);
   border-radius: 40px;
 }
-.header__connect {
-  max-width: 180px;
-  width: 100%;
-}
 
 .connect {
   display: flex;
@@ -237,6 +234,7 @@ a {
   gap: 150px;
 }
 .connect__button {
+  width: 180px;
   align-self: center;
 }
 
@@ -257,12 +255,11 @@ a {
   background-color: #d4742b;
 }
 .marquee div {
+  gap: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 60px;
   color: #faf3e8;
-  font-size: 20px;
 }
 
 .info {
@@ -298,7 +295,7 @@ a {
 .courses__title {
   display: flex;
   text-align: center;
-  width: 700px;
+  max-width: 700px;
   height: 70px;
   border-bottom: 1px solid #432818;
 }
@@ -383,6 +380,9 @@ a {
   opacity: 1;
   background-color: #000000;
 }
+.carousel__media {
+  display: none;
+}
 
 .carousel-prev,
 .carousel-next {
@@ -420,7 +420,7 @@ a {
   align-items: center;
   flex-direction: column;
   gap: 30px;
-  padding: 30px;
+  padding: 30px 10px;
   background-color: #d4742b;
   color: #faf3e8;
 }
@@ -428,36 +428,38 @@ a {
   align-self: flex-end;
   display: flex;
   text-align: center;
-  width: 700px;
+  max-width: 700px;
   height: 70px;
   border-bottom: 1px solid #faf3e8;
 }
 .students__carousel {
   gap: 30px;
-  padding: 10px;
+  padding: 50px;
   background-color: rgba(255, 255, 255, 0.262745098);
   border-radius: 50px;
 }
 .students__container {
-  height: 200px;
   display: flex;
+  height: 200px;
   overflow-x: scroll;
-  overscroll-behavior: contain;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
   gap: 50px;
   width: 100%;
   height: 100%;
 }
 .students__container::-webkit-scrollbar {
-  display: none;
+  display: flex;
+  height: 5px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.273);
+}
+.students__container::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  background-color: #ffe6a7;
 }
 .students__gallery {
   display: flex;
   height: 180px;
-  width: 550px;
+  width: 480px;
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -475,11 +477,12 @@ a {
 .students__gallery__text .h6 {
   width: 400px;
 }
-.students .gallery__title {
+
+.gallery__title {
   align-self: flex-start;
   display: flex;
   text-align: center;
-  width: 700px;
+  max-width: 700px;
   height: 70px;
   border-bottom: 1px solid #faf3e8;
 }
@@ -497,6 +500,7 @@ a {
 .join div {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px 0px;
   border-radius: 50px;
+  text-align: center;
   padding: 10px 30px;
   background-color: #432818;
 }
@@ -539,4 +543,195 @@ a {
 }
 .footer__main__map {
   border: 5px solid #ffe6a7;
+}
+
+.hamburger {
+  display: none;
+}
+.hamburger__box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.hamburger__line {
+  height: 3px;
+  background: #432818;
+  border-radius: 5px;
+  margin: 5px 0px;
+  transform-origin: left;
+  transition: all 0.5s;
+}
+.hamburger__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  transform: translateX(-320px);
+  transition: 0.3s;
+  box-shadow: 0 0 10px #000;
+}
+.hamburger__link {
+  padding: 30px 10px;
+}
+.hamburger__link:hover {
+  background-color: #e8e7e7;
+}
+.hamburger__checkbox:checked ~ .hamburger__box .hamburger__line:first-child {
+  transform: rotate(45deg);
+}
+.hamburger__checkbox:checked ~ .hamburger__box .hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger__checkbox:checked ~ .hamburger__box .hamburger__line:last-child {
+  transform: rotate(-45deg);
+}
+.hamburger__checkbox:checked ~ .hamburger__menu {
+  transform: translateX(0);
+}
+
+@media (max-width: 880px) {
+  .header {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .logo {
+    display: none;
+  }
+  .header__menu {
+    display: none;
+  }
+  .marquee div > p:not(:first-child) {
+    display: none;
+  }
+  .h2 {
+    font-size: 40px;
+  }
+  .connect__text {
+    background-color: rgba(0, 0, 0, 0.462745098);
+    padding: 20px;
+    border-radius: 50px;
+  }
+}
+@media (max-width: 800px) {
+  .info {
+    padding: 0 20px;
+  }
+  .h2 {
+    font-size: 30px;
+  }
+  .h3 {
+    font-size: 23px;
+  }
+  .courses__carousel,
+  .carousel__dots,
+  .motivation {
+    display: none;
+  }
+  .carousel__media {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .carousel__media__item {
+    padding: 30px;
+    border-radius: 50px;
+    background-color: rgba(187, 149, 87, 0.1450980392);
+  }
+  .footer {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .students__title,
+  .gallery__title {
+    align-self: center;
+  }
+  .gallery__title {
+    align-self: center;
+  }
+  .join {
+    height: 200px;
+  }
+}
+@media (max-width: 500px) {
+  .connect {
+    width: 100%;
+    margin: 40px 0 0 0;
+  }
+  .connect__text {
+    border-radius: 0;
+  }
+  .info {
+    flex-direction: column;
+  }
+  .info {
+    height: 700px;
+    padding: 0;
+  }
+  .info__img {
+    height: 300px;
+    width: 100%;
+    border-radius: 0;
+  }
+  .footer__contacts {
+    border: none;
+  }
+  .footer__map__title {
+    padding: 10px;
+  }
+  .students__carousel {
+    padding: 20px;
+  }
+  .students__gallery {
+    max-width: 350px;
+    max-height: 150px;
+  }
+  .students__gallery__text {
+    gap: 0;
+    width: 200px;
+  }
+  .students__gallery__img {
+    display: none;
+    height: 75px;
+    width: auto;
+  }
+  .button {
+    max-width: 130px;
+  }
+  .h1 {
+    font-size: 60px;
+  }
+  .h2 {
+    font-size: 32px;
+  }
+  .h3 {
+    font-size: 20px;
+  }
+  .h4 {
+    font-size: 20px;
+  }
+  .h5 {
+    font-size: 15px;
+  }
+  .h6 {
+    font-size: 12px;
+  }
+  .h7 {
+    font-size: 11px;
+  }
 }/*# sourceMappingURL=styles.css.map */

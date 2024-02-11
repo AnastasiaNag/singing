@@ -59,6 +59,22 @@
                 <i class="fa-solid fa-microphone-lines fa-2xl"></i>
                 COURSE
             </div>
+
+            <div class="hamburger">
+                <input class="hamburger__checkbox" type="checkbox" id="check" hidden>
+                <label for="check" class="hamburger__box">
+                  <div class="hamburger__line"></div>
+                  <div class="hamburger__line"></div>
+                  <div class="hamburger__line"></div>
+                </label>
+                <div class="hamburger__menu">
+                  <a class="hamburger__link" href="#info">Обо мне</a>
+                  <a class="hamburger__link" href="#courses">Курсы</a>
+                  <a class="hamburger__link" href="#students">Ученики</a>
+                  <a class="hamburger__link" href="#contacts">Контакты</a>
+                </div>
+              </div>
+
             <div class="header__menu h6">
                 <a class="header__menu__options" href="#info">Обо мне</a>
                 <a class="header__menu__options" href="#courses">Курсы</a>
@@ -120,7 +136,7 @@
         <div class="courses__title text h2">
             Мои курсы
         </div>
-        <div class="carousel">
+        <div class="carousel courses__carousel">
             <div class="carousel__button__container">
                 <button class="carousel-prev button courses-carousel-prev button__dis"><</button>
             </div>
@@ -190,6 +206,52 @@
             <button class="carousel__dot" data-index="1"></button>
             <button class="carousel__dot" data-index="2"></button>
         </div>
+
+        <div class="carousel__media">
+            <div class="carousel__media__item">
+                <div class="courses__text text">
+                    <div class="h3">
+                        Lorem ipsum
+                    </div>
+                    <div class="h7">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, nihil. Maiores officia,
+                        culpa, est voluptatum vel, consequatur harum ratione aspernatur inventore voluptatem
+                        corporis sunt fuga hic quis asperiores possimus quos? Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Velit, eum excepturi autem dolores
+                    </div>
+                    <button class="courses__button write__button button button__dis h6">Записаться</button>
+                </div>
+            </div>
+            <div class="carousel__media__item">
+                <div class="courses__text text">
+                    <div class="h3">
+                        Lorem ipsum
+                    </div>
+                    <div class="h7">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, nihil. Maiores officia,
+                        culpa, est voluptatum vel, consequatur harum ratione aspernatur inventore voluptatem
+                        corporis sunt fuga hic quis asperiores possimus quos? Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Velit, eum excepturi autem dolores
+                    </div>
+                    <button class="courses__button write__button button button__dis h6">Записаться</button>
+                </div>
+            </div>
+            <div class="carousel__media__item">
+                <div class="courses__text text">
+                    <div class="h3">
+                        Lorem ipsum
+                    </div>
+                    <div class="h7">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, nihil. Maiores officia,
+                        culpa, est voluptatum vel, consequatur harum ratione aspernatur inventore voluptatem
+                        corporis sunt fuga hic quis asperiores possimus quos? Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Velit, eum excepturi autem dolores
+                    </div>
+                    <button class="courses__button write__button button button__dis h6">Записаться</button>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <section class="motivation section">
@@ -207,16 +269,12 @@
             Мои студенты
         </div>
         <div class="students__carousel carousel">
-            <div class="carousel__button__container">
-                <button class="carousel-prev button students-carousel-prev button__dis">
-                    <</button>
-            </div>
             <div class="students__container">
                 <div class="students__gallery">
                     <img class="students__gallery__img" src="images/icon.png" alt="">
                     <div class="students__gallery__text text">
                         <div class="h4">Lorem ipsum dolor sit</div>
-                        <div class="h6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla velit neque ea,
+                        <div class="h7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla velit neque ea,
                             distinctio rem fugiat dolorum excepturi vero quasi hic quae natus explicabo adipisci minus
                             est cum quos a laborum.</div>
                     </div>
@@ -225,7 +283,7 @@
                     <img class="students__gallery__img" src="images/icon.png" alt="">
                     <div class="students__gallery__text text">
                         <div class="h4">Lorem ipsum dolor sit</div>
-                        <div class="h6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla velit neque ea,
+                        <div class="h7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla velit neque ea,
                             distinctio rem fugiat dolorum excepturi vero quasi hic quae natus explicabo adipisci minus
                             est cum quos a laborum.</div>
                     </div>
@@ -234,14 +292,38 @@
                     <img class="students__gallery__img" src="images/icon.png" alt="">
                     <div class="students__gallery__text text">
                         <div class="h4">Lorem ipsum dolor sit</div>
-                        <div class="h6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla velit neque ea,
+                        <div class="h7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla velit neque ea,
                             distinctio rem fugiat dolorum excepturi vero quasi hic quae natus explicabo adipisci minus
                             est cum quos a laborum.</div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel__button__container">
-                <button class="carousel-next button students-carousel-next button__dis">></button>
+                <div class="students__gallery">
+                    <img class="students__gallery__img" src="images/icon.png" alt="">
+                    <div class="students__gallery__text text">
+                        <div class="h4">Lorem ipsum dolor sit</div>
+                        <div class="h7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla velit neque ea,
+                            distinctio rem fugiat dolorum excepturi vero quasi hic quae natus explicabo adipisci minus
+                            est cum quos a laborum.</div>
+                    </div>
+                </div>
+                <div class="students__gallery">
+                    <img class="students__gallery__img" src="images/icon.png" alt="">
+                    <div class="students__gallery__text text">
+                        <div class="h4">Lorem ipsum dolor sit</div>
+                        <div class="h7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla velit neque ea,
+                            distinctio rem fugiat dolorum excepturi vero quasi hic quae natus explicabo adipisci minus
+                            est cum quos a laborum.</div>
+                    </div>
+                </div>
+                <div class="students__gallery">
+                    <img class="students__gallery__img" src="images/icon.png" alt="">
+                    <div class="students__gallery__text text">
+                        <div class="h4">Lorem ipsum dolor sit</div>
+                        <div class="h7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla velit neque ea,
+                            distinctio rem fugiat dolorum excepturi vero quasi hic quae natus explicabo adipisci minus
+                            est cum quos a laborum.</div>
+                    </div>
+                </div>
             </div>
         </div>
 

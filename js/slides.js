@@ -52,32 +52,4 @@ function createCarousel(prevSelector, nextSelector, carouselItemSelector, dotsSe
 createCarousel('.courses-carousel-prev','.courses-carousel-next', '.carousel__item', '.carousel__dot');
 
 
-// const prevBtn = document.querySelector('students-carousel-next');
-// const nextBtn = document.querySelector('students-carousel-prev');
-// const stud = document.querySelector('.students__container');
-
-// let currentSlide = 0;
-// const slideWidth = 300; // width of each slide in pixels
-// const containerWidth = 900; // total width of the container in pixels
-
-// function moveSlide(direction) {
-//   if (direction === 'next') {
-//     currentSlide++;
-//     if (currentSlide >= Math.ceil(stud.children.length / 3)) {
-//       currentSlide = 0;
-//     }
-//   } else {
-//     currentSlide--;
-//     if (currentSlide < 0) {
-//       currentSlide = Math.ceil(stud.children.length / 3) - 1;
-//     }
-//   }
-
-//   const translateValue = -1 * (slideWidth * currentSlide);
-//   stud.style.transition = 'transform 0.5s ease-in-out';
-//   stud.style.transform = `translateX(${translateValue}px)`;
-// }
-
-// prevBtn.addEventListener('click', () => moveSlide('prev'));
-// nextBtn.addEventListener('click', () => moveSlide('next'));
 
