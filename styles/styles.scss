@@ -26,6 +26,9 @@
             transform: scale(0.95);
         }
     }
+    &-connect{
+        width: 180px;
+    }
 }
 .close__btn {
     font-size: 10px;
@@ -55,12 +58,13 @@
     @include modal;
     justify-content: space-around;
     align-items: center;
-    width: 400px;
-    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
     &__title {
+        justify-content: center;
         color: $color-1;
         @include title-border(center, $color-1);
-        width: 320px;
+        max-width: 320px;
     }
     &__content {
         @include center;
@@ -71,27 +75,22 @@
         @include center;
         flex-direction: column;
         gap: 10px;
-        & form {
-            width: 180px;
-        }
     }
 }
 .popup {
     @include modal;
     width: 400px;
-    height: 200px;
+    height: 170px;
     &__content {
-        @include center;
+        display: flex;
+        align-items: center;
         gap: 10px;
         padding: 20px;
         flex-direction: column;
     }
     &__socials {
         display: flex;
-        gap: 30px;
-        & div {
-            width: 150px;
-        }
+        gap: 20px;
     }
 }
 .blur {
@@ -325,6 +324,12 @@
             &-thumb {
                 border-radius: 9px;
                 background-color: $color-4;
+                &:hover{
+                    background-color: $color-5;
+                }
+            }
+            &:hover{
+                background-color: #00000061;
             }
         }
     }
@@ -419,7 +424,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-evenly;
         height: 2.5rem;
         width: 2.5rem;
         cursor: pointer;
@@ -427,7 +432,7 @@
     }
 
     &__line {
-        height: 3px;
+        height: 2px;
         background: $color-1;
         border-radius: 5px;
         margin: 5px 0px;
@@ -559,6 +564,20 @@
 }
 
 @media (max-width: 500px) {
+    .modal{
+        width: 180px;
+        &__content{
+            width: 180px;
+            gap: 20px;
+        }
+    }
+    .popup{
+        height: 240px;
+        width: 180px;
+        &__socials{
+            flex-direction: column;
+        }
+    }
     .connect {
         width: 100%;
         margin: 40px 0 0 0;
@@ -568,10 +587,8 @@
     }
     .info {
         flex-direction: column;
-    }
-    .info {
         height: 700px;
-        padding: 0;
+        padding: 0 20px;
         &__img {
             height: 300px;
             width: 100%;
@@ -607,6 +624,9 @@
     }
     .button {
         max-width: 130px;
+        &-connect{
+            width: 130px;
+        }
     }
 
     .h1 {
