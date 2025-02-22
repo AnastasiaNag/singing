@@ -37,6 +37,7 @@ function createCarousel(prevSelector, nextSelector, carouselItemSelector, dotsSe
   }
   
   dots.forEach((dot, index) => {
+    fadedSlide()
     dot.onclick = () => {
       showSlide(index);
       currentIndex = index;
