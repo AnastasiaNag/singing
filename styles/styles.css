@@ -104,7 +104,6 @@ a {
 
 .top-text {
   display: flex;
-  align-self: center;
   width: 70px;
   border-bottom: 0.5px dashed;
 }
@@ -126,9 +125,9 @@ a {
   align-items: center;
   max-width: 400px;
   max-height: 400px;
+  padding: 0 20px;
 }
 .modal__close {
-  margin: 10px;
   display: flex;
   align-self: flex-end;
   height: 30px;
@@ -136,11 +135,6 @@ a {
 .modal__title {
   justify-content: center;
   color: #432818;
-  display: flex;
-  text-align: center;
-  max-width: 700px;
-  height: 70px;
-  border-bottom: 1px solid #432818;
   max-width: 320px;
 }
 .modal__content {
@@ -227,9 +221,11 @@ a {
 .connect {
   display: flex;
   align-items: center;
-  width: 300px;
+  max-width: 500px;
+  width: 100%;
   margin: 80px 80px 20px;
   gap: 150px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .connect__button {
   width: 180px;
@@ -266,7 +262,7 @@ a {
   background-color: white;
   color: #432818;
   position: relative;
-  height: 500px;
+  padding: 20px;
 }
 .info__img {
   height: 350px;
@@ -293,7 +289,6 @@ a {
 .courses__title {
   display: flex;
   text-align: center;
-  max-width: 700px;
   height: 70px;
   border-bottom: 1px solid #432818;
 }
@@ -325,7 +320,6 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -389,6 +383,39 @@ a {
   height: 40px;
 }
 
+.singing_courses {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 50px;
+  color: #432818;
+}
+.singing_courses__title {
+  display: flex;
+  text-align: center;
+  height: 70px;
+  border-bottom: 1px solid #432818;
+}
+.singing_courses__info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.singing_courses__lesson {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  max-width: 300px;
+  width: 100%;
+  border: 3px solid #d4742b;
+  border-radius: 10%;
+  padding: 20px;
+}
+
 .motivation {
   display: flex;
   display: flex;
@@ -412,6 +439,10 @@ a {
   text-shadow: -3px 1px 10px #000000;
 }
 
+.video {
+  height: 300px;
+}
+
 .students {
   display: flex;
   justify-content: space-around;
@@ -419,134 +450,47 @@ a {
   flex-direction: column;
   gap: 30px;
   padding: 30px 10px;
-  background-color: #d4742b;
-  color: #faf3e8;
+  color: #432818;
 }
 .students__title {
-  align-self: flex-end;
   display: flex;
   text-align: center;
-  max-width: 700px;
   height: 70px;
-  border-bottom: 1px solid #faf3e8;
+  border-bottom: 1px solid #432818;
 }
-.students__carousel {
-  gap: 30px;
-  padding: 50px;
-  background-color: rgba(255, 255, 255, 0.262745098);
-  border-radius: 50px;
-}
-.students__container {
-  display: flex;
-  height: 200px;
-  overflow-x: scroll;
-  gap: 50px;
+.students__videos {
   width: 100%;
-  height: 100%;
 }
-.students__container::-webkit-scrollbar {
+.students__videos__atmo {
   display: flex;
-  height: 5px;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.273);
-}
-.students__container::-webkit-scrollbar-thumb {
-  border-radius: 9px;
-  background-color: #ffe6a7;
-}
-.students__container::-webkit-scrollbar-thumb:hover {
-  background-color: #faf3e8;
-}
-.students__container::-webkit-scrollbar:hover {
-  background-color: rgba(0, 0, 0, 0.3803921569);
-}
-.students__gallery {
-  display: flex;
-  height: 180px;
-  width: 480px;
+  flex-direction: column;
   gap: 20px;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
 }
-.students__gallery__img {
-  width: 150px;
-  height: auto;
-}
-.students__gallery__text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.students__gallery__text .h6 {
-  width: 400px;
-}
-
-.gallery__title {
+.students__videos__atmo__title {
   align-self: flex-start;
-  display: flex;
-  text-align: center;
-  max-width: 700px;
-  height: 70px;
-  border-bottom: 1px solid #faf3e8;
 }
-
-.join {
+.students__videos__atmo__gallery {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  color: #faf3e8;
-  height: 300px;
-  background-image: url(../images/join.jpg);
-  background-size: cover;
-}
-.join div {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px 0px;
-  border-radius: 50px;
-  text-align: center;
-  padding: 10px 30px;
-  background-color: #432818;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 30px;
 }
 
 .footer {
   display: flex;
-  justify-content: space-around;
   background-color: #432818;
   color: #ffe6a7;
+  justify-content: center;
 }
 .footer a {
   color: rgb(113, 218, 232);
 }
 .footer__contacts {
   display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-  padding: 30px;
-  gap: 30px;
-  border: 1px solid #ffe6a7;
-  border-radius: 20%;
-}
-.footer__contacts__title {
-  border-bottom: 1px solid #ffe6a7;
-}
-.footer__contacts__info {
-  display: flex;
-  flex-direction: column;
-  width: 260px;
-  gap: 15px;
-}
-.footer__map {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-  gap: 30px;
-}
-.footer__map__title {
-  border-bottom: 1px solid #ffe6a7;
-}
-.footer__main__map {
-  border: 5px solid #ffe6a7;
+  align-items: center;
+  padding: 15px;
+  gap: 20px;
 }
 
 .hamburger {
@@ -632,7 +576,16 @@ a {
 }
 @media (max-width: 800px) {
   .info {
-    padding: 0 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .info__img {
+    height: 200px;
+    width: 100%;
+    border-radius: 0;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .h2 {
     font-size: 30px;
@@ -674,6 +627,7 @@ a {
 }
 @media (max-width: 500px) {
   .modal {
+    height: 300px;
     width: 180px;
   }
   .modal__content {
@@ -692,16 +646,6 @@ a {
     margin: 40px 0 0 0;
   }
   .connect__text {
-    border-radius: 0;
-  }
-  .info {
-    flex-direction: column;
-    height: 700px;
-    padding: 0 20px;
-  }
-  .info__img {
-    height: 300px;
-    width: 100%;
     border-radius: 0;
   }
   .footer__contacts {

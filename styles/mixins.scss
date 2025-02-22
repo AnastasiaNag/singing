@@ -12,7 +12,6 @@
 @mixin title-border($direction, $color) {
     display: flex;
     text-align: $direction;
-    max-width: 700px;
     height: 70px;
     border-bottom: 1px solid $color;
 }
